@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神田周辺おすすめホテル比較 7/3（金）1泊素泊まり</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap');
+  :root{
+    --navy:#1a2744;--gold:#b8841f;--light-gold:#fef3d8;
+    --gray-bg:#f4f6f9;--border:#e2e8f0;--text:#2c3550;--muted:#7a869a;
+    --green:#1e6b45;--green-bg:#e8f4ee;--blue:#1a5fa8;--blue-bg:#e8f2fb;
+    --warn:#8a6020;--warn-bg:#fef8e7;--no-bg:#f3f3f3;--no-text:#888;
+    --rakuten:#bf0000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:var(--text);max-width:960px;margin:0 auto;padding:24px 20px;}
+
+  .header{background:var(--navy);color:#fff;border-radius:12px;padding:24px 28px;margin-bottom:20px;position:relative;overflow:hidden;}
+  .header::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(184,132,31,.18);}
+  .header h1{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;letter-spacing:.04em;margin-bottom:8px;}
+  .header .meta{font-size:12px;opacity:.75;display:flex;gap:16px;flex-wrap:wrap;}
+  .header .meta span::before{content:'▶ ';color:#f0c060;}
+  .budget{display:inline-block;background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:8px;}
+
+  .note{background:#fffbef;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:10px 14px;font-size:11px;color:#7a6020;margin-bottom:20px;line-height:1.7;}
+
+  .section-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+  .section-title::before{content:'';display:inline-block;width:4px;height:16px;background:var(--gold);border-radius:2px;}
+
+  .map-wrap{border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-bottom:24px;}
+  #map{width:100%;height:440px;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:12px;background:var(--gray-bg);border-radius:6px;padding:5px 10px;}
+  .legend-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;}
+  .dot-venue{background:#e53e3e;}
+  .dot-bath{background:#2b6cb0;}
+  .dot-hotel{background:#2f855a;}
+  .dot-far{background:#805ad5;}
+
+  .table-wrap{border-radius:10px;overflow:auto;border:1px solid var(--border);margin-bottom:20px;}
+  table{width:100%;border-collapse:collapse;font-size:12px;min-width:820px;}
+  thead tr{background:var(--navy);color:#fff;}
+  thead th{padding:11px 11px;text-align:center;font-weight:500;border-right:1px solid rgba(255,255,255,.12);white-space:nowrap;font-size:11px;}
+  thead th:first-child{text-align:left;min-width:180px;}
+  tbody tr{border-bottom:1px solid var(--border);}
+  tbody tr:hover{background:#f8faff;}
+  tbody tr.rec{background:#f0faf5;}
+  tbody tr.far{background:#faf8ff;}
+  td{padding:11px 11px;vertical-align:middle;border-right:1px solid var(--border);text-align:center;font-size:12px;}
+  td:first-child{text-align:left;}
+
+  .hotel-name{font-weight:700;font-size:13px;color:var(--navy);display:block;line-height:1.4;margin-bottom:2px;}
+  .hotel-addr{font-size:10px;color:var(--muted);display:block;margin-bottom:4px;}
+
+  .links{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px;}
+  .link-btn{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;text-decoration:none;white-space:nowrap;line-height:1.6;border:1px solid;}
+  .link-official{background:#fff;color:var(--navy);border-color:#b0bbd0;}
+  .link-official:hover{background:#eef2f8;}
+  .link-rakuten{background:#fff;color:var(--rakuten);border-color:#f0b0b0;}
+  .link-rakuten:hover{background:#fff5f5;}
+
+  .badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px;}
+  .badge-ok{background:var(--green-bg);color:var(--green);}
+  .badge-warn{background:var(--warn-bg);color:var(--warn);}
+  .badge-purple{background:#f3eeff;color:#553c9a;}
+  .price-main{font-size:15px;font-weight:700;display:block;}
+  .price-sub{font-size:10px;color:var(--muted);}
+  .bath-yes{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;background:var(--blue-bg);color:var(--blue);}
+  .bath-no{display:inline-block;font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;background:var(--no-bg);color:var(--no-text);}
+  .star-gold{color:var(--gold);font-weight:700;}
+
+  footer{font-size:11px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);padding-top:12px;margin-top:4px;}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏨 神田周辺　地方組おすすめホテル比較</h1>
+  <div class="meta">
+    <span>宿泊日：2025年7月3日（金）1泊</span>
+    <span>シングル・素泊まり</span>
+    <span>会場：KANDA SQUARE 3F</span>
+  </div>
+  <div class="budget">予算目安：税込 13,200円以内</div>
+</div>
+
+<div class="note">
+  ⚠️ 掲載料金はじゃらん・価格.com・楽天トラベル等の参考値（通常期）です。7月金曜夜は繁忙期のため実際の料金は変動します。必ず各予約サイトで7/3の空室・料金を確認してからご予約ください。
+</div>
+
+<!-- MAP -->
+<div class="section-title">神田スクエアからの周辺MAP</div>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-venue"></div>会場：KANDA SQUARE</div>
+  <div class="legend-item"><div class="legend-dot dot-bath"></div>大浴場あり（天然温泉）</div>
+  <div class="legend-item"><div class="legend-dot dot-hotel"></div>神田エリアホテル</div>
+  <div class="legend-item"><div class="legend-dot dot-far"></div>御茶ノ水エリアホテル</div>
+</div>
+<div class="map-wrap"><div id="map"></div></div>
+
+<!-- 比較表 -->
+<div class="section-title">ホテル料金・設備比較（5社）</div>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">ホテル名・予約リンク</th>
+        <th colspan="2">7/3（金）税込料金 1名・素泊まり</th>
+        <th>会場まで</th>
+        <th>口コミ</th>
+        <th>🛁 大浴場</th>
+        <th style="text-align:left">チェックIN/OUT・特徴</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ① ベルケン -->
+      <tr>
+        <td>
+          <span class="hotel-name">① ベルケンホテル・神田</span>
+          <span class="hotel-addr">千代田区神田須田町1-4-7</span>
+          <span class="badge badge-warn">淡路町駅1分</span>
+          <div class="links">
+            <a class="link-btn link-official" href="https://belkenhotel.com/belken_kanda/" target="_blank">🏠 公式</a>
+            <a class="link-btn link-rakuten" href="https://travel.rakuten.co.jp/HOTEL/167516/167516.html" target="_blank">🔴 楽天</a>
+          </div>
+        </td>
+        <td colspan="2" style="text-align:center;background:#fff8e8;">
+          <span style="font-size:18px;font-weight:700;color:#b8841f;">¥13,700</span>
+          <span style="display:block;font-size:10px;color:var(--muted);">税込・7/3確認済（最安値）</span>
+        </td>
+        <td><span style="font-size:13px;font-weight:700;color:var(--green)">約12分</span><br><span style="font-size:10px;color:var(--muted)">淡路町1分</span></td>
+        <td><span class="star-gold">★4.26</span></td>
+        <td><span class="bath-no">なし</span></td>
+        <td style="text-align:left"><span style="color:var(--muted);font-size:11px">15:00 / 11:00</span><br>サータベッド・プラチナノバブル水<br>無料コーヒー・コンビニ10秒</td>
+      </tr>
+      <!-- ② リブマックス -->
+      <tr>
+        <td>
+          <span class="hotel-name">② ホテルリブマックス東京神田駅前</span>
+          <span class="hotel-addr">千代田区鍛冶町2-4-3</span>
+          <span class="badge badge-ok">最安値</span>
+          <div class="links">
+            <a class="link-btn link-official" href="https://www.hotel-livemax.com/tokyo/kandast/" target="_blank">🏠 公式</a>
+            <a class="link-btn link-rakuten" href="https://travel.rakuten.co.jp/HOTEL/172838/172838.html" target="_blank">🔴 楽天</a>
+          </div>
+        </td>
+        <td colspan="2" style="text-align:center;background:#e8f4ee;">
+          <span style="font-size:18px;font-weight:700;color:#1e6b45;">¥11,900</span>
+          <span style="display:block;font-size:10px;color:var(--muted);">税込・7/3確認済（最安値）</span>
+        </td>
+        <td><span style="font-size:12px;font-weight:500">約13分</span><br><span style="font-size:10px;color:var(--muted)">神田東口3分</span></td>
+        <td><span style="color:var(--muted);font-weight:500">★3.4</span></td>
+        <td><span class="bath-no">なし</span></td>
+        <td style="text-align:left"><span style="color:var(--muted);font-size:11px">15:00 / 10:00</span><br>電子レンジ・空気清浄機<br>全室完備</td>
+      </tr>
+      <!-- ③ SUI -->
+      <tr class="rec">
+        <td>
+          <span class="hotel-name">③ ホテルSUI神田 by ABEST</span>
+          <span class="hotel-addr">千代田区鍛冶町1-9-15</span>
+          <span class="badge badge-ok">口コミ最高</span>
+          <div class="links">
+            <a class="link-btn link-official" href="https://hotelsui-kanda.com/" target="_blank">🏠 公式</a>
+            <a class="link-btn link-rakuten" href="https://travel.rakuten.co.jp/HOTEL/168314/168314.html" target="_blank">🔴 楽天</a>
+          </div>
+        </td>
+        <td colspan="2" style="text-align:center;">
+          <span style="font-size:18px;font-weight:700;">¥9,876〜</span>
+          <span style="display:block;font-size:10px;color:var(--muted);">税込・楽天プラン参考</span>
+        </td>
+        <td><span style="font-size:12px;font-weight:500">約13分</span><br><span style="font-size:10px;color:var(--muted)">神田駅5分</span></td>
+        <td><span class="star-gold">★4.4</span><br><span style="font-size:10px;color:var(--green)">最高評価</span></td>
+        <td><span class="bath-no">なし</span></td>
+        <td style="text-align:left"><span style="color:var(--muted);font-size:11px">15:00 / 11:00</span><br>スタッフ対応◎<br>無料たこ焼き・ハッピーアワー</td>
+      </tr>
+      <!-- ④ アパホテル -->
+      <tr class="rec">
+        <td>
+          <span class="hotel-name">④ アパホテル〈神田駅東〉</span>
+          <span class="hotel-addr">千代田区岩本町2-1-1</span>
+          <span class="badge badge-ok">天然温泉あり</span>
+          <div class="links">
+            <a class="link-btn link-official" href="https://www.apahotel.com/hotel/syutoken/tokyo/kandaeki-higashi/" target="_blank">🏠 公式</a>
+            <a class="link-btn link-rakuten" href="https://travel.rakuten.co.jp/HOTEL/136820/136820.html" target="_blank">🔴 楽天</a>
+          </div>
+        </td>
+        <td colspan="2" style="text-align:center;">
+          <span style="font-size:18px;font-weight:700;">¥13,100〜</span>
+          <span style="display:block;font-size:10px;color:var(--muted);">税込・楽天プラン参考</span>
+        </td>
+        <td><span style="font-size:12px;font-weight:500">約15分</span><br><span style="font-size:10px;color:var(--muted)">岩本町5分</span></td>
+        <td><span class="star-gold">★4.0</span></td>
+        <td><span class="bath-yes">♨ あり<br>天然温泉</span></td>
+        <td style="text-align:left"><span style="color:var(--muted);font-size:11px">15:00 / 10:00</span><br>VOD無料・レストラン<br>コインランドリー</td>
+      </tr>
+      <!-- ⑤ お茶の水イン -->
+      <tr class="far">
+        <td>
+          <span class="hotel-name">⑤ お茶の水イン</span>
+          <span class="hotel-addr">文京区湯島1-3-7</span>
+          <span class="badge badge-purple">御茶ノ水エリア</span>
+          <div class="links">
+            <a class="link-btn link-official" href="https://www.o-inn.co.jp/" target="_blank">🏠 公式</a>
+            <a class="link-btn link-rakuten" href="https://travel.rakuten.co.jp/HOTEL/1993/1993.html" target="_blank">🔴 楽天</a>
+          </div>
+        </td>
+        <td colspan="2" style="text-align:center;">
+          <span style="font-size:18px;font-weight:700;">¥11,200〜</span>
+          <span style="display:block;font-size:10px;color:var(--muted);">税込・楽天プラン参考</span>
+        </td>
+        <td><span style="font-size:12px;font-weight:500">約20分</span><br><span style="font-size:10px;color:var(--muted)">御茶ノ水駅3分</span></td>
+        <td><span class="star-gold">★4.0</span></td>
+        <td><span class="bath-no">なし</span></td>
+        <td style="text-align:left"><span style="color:var(--muted);font-size:11px">14:00 / 12:00（22h滞在）</span><br>無料コーヒー・1Fコンビニ<br>秋葉原徒歩5分</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  ※ ①ベルケン・②リブマックスの料金は実際に確認した7/3（金）税込最安値です。③④⑤は楽天トラベルのプラン一覧に表示されている参考値（変動あり）です。<br>
+  ※ ③SUI神田の¥9,876〜は価格.com・楽天掲載の参考値。実際の7/3料金は予約サイトでご確認ください。<br>
+  ※ 入湯税・宿泊税が別途かかる場合があります。<br>
+  ※ ⑤お茶の水インは会場まで徒歩約20分。電車（御茶ノ水→神田 1駅）の利用も検討ください。
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// 全ホテルが入る範囲にズームを調整（御茶ノ水まで含む）
+const map = L.map('map').setView([35.6960, 139.767], 14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors', maxZoom: 18
+}).addTo(map);
+
+function makeIcon(color, label) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="44" viewBox="0 0 36 44">
+    <path d="M18 2C10.3 2 4 8.3 4 16c0 10.5 14 26 14 26S32 26.5 32 16C32 8.3 25.7 2 18 2z" fill="${color}" stroke="white" stroke-width="2"/>
+    <text x="18" y="20" font-family="Arial,sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="white">${label}</text>
+  </svg>`;
+  return L.divIcon({ html: svg, className:'', iconSize:[36,44], iconAnchor:[18,44], popupAnchor:[0,-44] });
+}
+
+const spots = [
+  { lat:35.6931208, lng:139.7632605, color:'#e53e3e', label:'会場',
+    popup:'<b>【会場】神田スクエア</b><br>KANDA SQUARE 3F<br>千代田区神田錦町2-2-1' },
+  { lat:35.6947934, lng:139.7678636, color:'#2f855a', label:'①',
+    popup:'<b>① ベルケンホテル・神田</b><br>千代田区神田須田町1-4-7<br>税込 ¥9,588〜（参考）<br>★4.26 淡路町駅徒歩1分<br>会場まで徒歩約12分<br><a href="https://belkenhotel.com/belken_kanda/" target="_blank">公式</a>　<a href="https://travel.rakuten.co.jp/HOTEL/167516/167516.html" target="_blank" style="color:#bf0000">楽天</a>' },
+  { lat:35.6914832, lng:139.7733034, color:'#2f855a', label:'②',
+    popup:'<b>② ホテルリブマックス東京神田駅前</b><br>千代田区鍛冶町2-4-3<br>税込 ¥5,500〜（参考）<br>会場まで徒歩約13分<br><a href="https://www.hotel-livemax.com/tokyo/kandast/" target="_blank">公式</a>　<a href="https://travel.rakuten.co.jp/HOTEL/172838/172838.html" target="_blank" style="color:#bf0000">楽天</a>' },
+  { lat:35.690775, lng:139.7733003, color:'#2f855a', label:'③',
+    popup:'<b>③ ホテルSUI神田 by ABEST</b><br>千代田区鍛冶町1-9-15<br>税込 ¥8,000〜（参考）<br>★4.4 スタッフ対応◎<br>会場まで徒歩約13分<br><a href="https://hotelsui-kanda.com/" target="_blank">公式</a>　<a href="https://travel.rakuten.co.jp/HOTEL/168314/168314.html" target="_blank" style="color:#bf0000">楽天</a>' },
+  { lat:35.6923, lng:139.7769, color:'#2b6cb0', label:'④',
+    popup:'<b>④ アパホテル〈神田駅東〉</b><br>千代田区岩本町2-1-1<br>税込 ¥6,136〜（参考）<br><span style="color:#1a5fa8">♨ 天然温泉大浴場あり</span><br>会場まで徒歩約15分<br><a href="https://www.apahotel.com/hotel/syutoken/tokyo/kandaeki-higashi/" target="_blank">公式</a>　<a href="https://travel.rakuten.co.jp/HOTEL/136820/136820.html" target="_blank" style="color:#bf0000">楽天</a>' },
+  { lat:35.7015279, lng:139.7662808, color:'#805ad5', label:'⑤',
+    popup:'<b>⑤ お茶の水イン</b><br>文京区湯島1-3-7<br>税込 ¥7,986〜（参考）<br>★4.0 御茶ノ水駅3分<br>会場まで徒歩約20分<br><a href="https://www.o-inn.co.jp/" target="_blank">公式</a>　<a href="https://travel.rakuten.co.jp/HOTEL/1993/1993.html" target="_blank" style="color:#bf0000">楽天</a>' },
+];
+
+spots.forEach(s => {
+  L.marker([s.lat, s.lng], {icon: makeIcon(s.color, s.label)})
+    .addTo(map).bindPopup(s.popup, {maxWidth:270});
+});
+
+// 会場への点線
+const venue = [35.6931208, 139.7632605];
+spots.slice(1).forEach(s => {
+  L.polyline([[s.lat, s.lng], venue], {
+    color:'#999', weight:1.5, dashArray:'5,6', opacity:0.5
+  }).addTo(map);
+});
+</script>
+</body>
+</html>
